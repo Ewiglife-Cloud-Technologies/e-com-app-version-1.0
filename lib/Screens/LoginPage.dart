@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LogInPage extends StatefulWidget {
-  const LogInPage({Key key}) : super(key: key);
+  const LogInPage({Key? key}) : super(key: key);
 
   @override
   _LogInPageState createState() => _LogInPageState();
