@@ -161,10 +161,10 @@
       "name": "e_com_app_v_1_0",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.11"
     }
   ],
-  "generated": "2021-07-11T15:59:41.748359Z",
+  "generated": "2021-07-11T22:38:22.567434Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

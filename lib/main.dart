@@ -1,12 +1,14 @@
 import 'package:e_com_app_v_1_0/Services/ApiService.dart';
 import 'package:flutter/material.dart';
 import 'Models/UserModel.dart';
+import 'Screens/Signup.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,21 +16,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SignupPage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  MyHomePage({
+    Key key,
+    @required this.title,
+  }) : super(key: key);
   final String title;
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late UserModel _user;
-  late ApiService _service;
+  // late ApiService _service;
+  UserModel _model;
 
   final TextEditingController fnameController = TextEditingController();
   final TextEditingController lnameController = TextEditingController();
@@ -39,7 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _service = ApiService();
   }
 
   @override
@@ -78,19 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          final String fname = fnameController.text;
-          final String lname = lnameController.text;
-          final String email = emailController.text;
-          final String password = passwordController.text;
-          final String confPassword = confPasswordController.text;
-          UserModel user = await _service.createUser(
-              fname, lname, email, password, confPassword);
-          print(fnameController.text);
-          setState(() {
-            _user = user;
-          });
-        },
+        onPressed: () {},
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
