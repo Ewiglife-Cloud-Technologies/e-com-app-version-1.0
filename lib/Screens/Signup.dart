@@ -4,6 +4,8 @@ import 'package:e_com_app_v_1_0/Utils/FormHelper.dart';
 import 'package:e_com_app_v_1_0/Utils/progressHud.dart';
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 class SignupPage extends StatefulWidget {
   @override
   _SignupPageState createState() => _SignupPageState();
@@ -73,7 +75,7 @@ class _SignupPageState extends State<SignupPage> {
                         this.model.lastName = value,
                       }, onValidate: (value) {
                 return null;
-              }),
+              }, text: 'Last Name'),
               FormHelper.fieldLabel('Email'),
               FormHelper.textInput(
                   context,
@@ -157,12 +159,18 @@ class _SignupPageState extends State<SignupPage> {
                       if (ret) {
                         FormHelper.showMessage(context, 'Shopify App',
                             'Registration Successfull', 'ok', () {
-                          Navigator.of(context).pop();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) => Home()));
                         });
                       } else {
                         FormHelper.showMessage(context, 'Shopify App',
                             'Email Id Already Registered.', 'ok', () {
-                          Navigator.of(context).pop();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) => Home()));
                         });
                       }
                     });

@@ -9,7 +9,7 @@ import 'package:e_com_app_v_1_0/Models/UserModel.dart';
 class ApiService {
   Future<bool> createUser(UserModel model) async {
     var uri =
-        'https://faf10d485cc52aaf28f257a4d5261dbb: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@ewiglife-demostore.myshopify.com/admin/api/2021-07/customers.json';
+        'https://4ebf96eaaf71f909a5d6996023b84a18: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@ewiglifeapptest.myshopify.com/admin/api/2021-07/customers.json';
     bool ret = false;
 
     try {

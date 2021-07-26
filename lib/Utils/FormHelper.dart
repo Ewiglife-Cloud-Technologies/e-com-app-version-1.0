@@ -2,23 +2,20 @@ import 'package:flutter/material.dart';
 
 class FormHelper {
   static Widget textInput(
-    BuildContext context,
-    Object initialValue,
-    Function onChanged, {
-    bool isTextArea = false,
-    bool isNumberInput = false,
-    obscureText: false,
-    Function onValidate,
-    Widget prefixIcon,
-    Widget suffixIcon,
-  }) {
+      BuildContext context, Object initialValue, Function onChanged,
+      {bool isTextArea = false,
+      bool isNumberInput = false,
+      obscureText: false,
+      Function onValidate,
+      Widget prefixIcon,
+      Widget suffixIcon,
+      String text}) {
     return TextFormField(
         initialValue: initialValue != null ? initialValue.toString() : '',
         decoration: fieldDecoration(
           context,
-          '',
-          '',
           suffixIcon: suffixIcon,
+          hintText: text,
         ),
         obscureText: obscureText,
         maxLines: !isTextArea ? 1 : 3,
@@ -32,9 +29,9 @@ class FormHelper {
   }
 
   static InputDecoration fieldDecoration(
-    BuildContext context,
+    BuildContext context, {
     String hintText,
-    String helperText, {
+    String helperText,
     Widget prefixIcon,
     Widget suffixIcon,
   }) {
@@ -45,6 +42,7 @@ class FormHelper {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(50),
           borderSide: BorderSide(
             color: Theme.of(context).primaryColor,
             width: 1,
