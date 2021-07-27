@@ -66,7 +66,7 @@ class _SignupPageState extends State<SignupPage> {
                   return 'Please Enter First Name.';
                 }
                 return null;
-              }),
+              }, text: 'First Name'),
               FormHelper.fieldLabel('Last Name'),
               FormHelper.textInput(
                   context,
@@ -78,19 +78,22 @@ class _SignupPageState extends State<SignupPage> {
               }, text: 'Last Name'),
               FormHelper.fieldLabel('Email'),
               FormHelper.textInput(
-                  context,
-                  model.email,
-                  (value) => {
-                        this.model.email = value,
-                      }, onValidate: (value) {
-                if (value.toString().isEmpty) {
-                  return 'Please Enter Valid Email.';
-                }
-                if (value.isNotEmpty && !value.toString().isNotEmpty) {
-                  return 'please Enter Valid Email Id.';
-                }
-                return null;
-              }),
+                context,
+                model.email,
+                (value) => {
+                  this.model.email = value,
+                },
+                onValidate: (value) {
+                  if (value.toString().isEmpty) {
+                    return 'Please Enter Valid Email.';
+                  }
+                  if (value.isNotEmpty && !value.toString().isNotEmpty) {
+                    return 'please Enter Valid Email Id.';
+                  }
+                  return null;
+                },
+                text: 'Email',
+              ),
               FormHelper.fieldLabel('Password'),
               FormHelper.textInput(
                 context,
@@ -104,6 +107,7 @@ class _SignupPageState extends State<SignupPage> {
                   }
                   return null;
                 },
+                text: 'Password',
                 obscureText: hidePassword,
                 suffixIcon: IconButton(
                     color: Theme.of(context).accentColor.withOpacity(0.4),
@@ -129,6 +133,7 @@ class _SignupPageState extends State<SignupPage> {
                   }
                   return null;
                 },
+                text: 'Confirm Password',
                 obscureText: hidePassword,
                 suffixIcon: IconButton(
                     color: Theme.of(context).accentColor.withOpacity(0.4),

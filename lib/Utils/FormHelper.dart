@@ -10,22 +10,32 @@ class FormHelper {
       Widget prefixIcon,
       Widget suffixIcon,
       String text}) {
-    return TextFormField(
-        initialValue: initialValue != null ? initialValue.toString() : '',
-        decoration: fieldDecoration(
-          context,
-          suffixIcon: suffixIcon,
-          hintText: text,
-        ),
-        obscureText: obscureText,
-        maxLines: !isTextArea ? 1 : 3,
-        keyboardType: isNumberInput ? TextInputType.number : TextInputType.text,
-        onChanged: (String value) {
-          return onChanged(value);
-        },
-        validator: (value) {
-          return onValidate(value);
-        });
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        border: Border.all(color: Colors.black),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: TextFormField(
+            initialValue: initialValue != null ? initialValue.toString() : '',
+            decoration: fieldDecoration(
+              context,
+              suffixIcon: suffixIcon,
+              hintText: text,
+            ),
+            obscureText: obscureText,
+            maxLines: !isTextArea ? 1 : 3,
+            keyboardType:
+                isNumberInput ? TextInputType.number : TextInputType.text,
+            onChanged: (String value) {
+              return onChanged(value);
+            },
+            validator: (value) {
+              return onValidate(value);
+            }),
+      ),
+    );
   }
 
   static InputDecoration fieldDecoration(
@@ -36,18 +46,24 @@ class FormHelper {
     Widget suffixIcon,
   }) {
     return InputDecoration(
-        contentPadding: EdgeInsets.all(6),
-        hintText: hintText,
-        helperText: helperText,
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(50),
-          borderSide: BorderSide(
-            color: Theme.of(context).primaryColor,
-            width: 1,
-          ),
-        ));
+      contentPadding: EdgeInsets.all(6),
+      hintText: hintText,
+      helperText: helperText,
+      prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
+      hasFloatingPlaceholder: false,
+      filled: false,
+      focusColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      focusedBorder: OutlineInputBorder(
+        borderSide: new BorderSide(color: Colors.white),
+        borderRadius: new BorderRadius.circular(25.7),
+      ),
+      enabledBorder: UnderlineInputBorder(
+        borderSide: new BorderSide(color: Colors.white),
+        borderRadius: new BorderRadius.circular(25.7),
+      ),
+    );
   }
 
   static Widget fieldLabel(String labelName) {
