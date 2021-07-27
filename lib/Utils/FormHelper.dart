@@ -10,30 +10,33 @@ class FormHelper {
       Widget prefixIcon,
       Widget suffixIcon,
       String text}) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
-        border: Border.all(color: Colors.black),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: TextFormField(
-            initialValue: initialValue != null ? initialValue.toString() : '',
-            decoration: fieldDecoration(
-              context,
-              suffixIcon: suffixIcon,
-              hintText: text,
-            ),
-            obscureText: obscureText,
-            maxLines: !isTextArea ? 1 : 3,
-            keyboardType:
-                isNumberInput ? TextInputType.number : TextInputType.text,
-            onChanged: (String value) {
-              return onChanged(value);
-            },
-            validator: (value) {
-              return onValidate(value);
-            }),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          border: Border.all(color: Colors.black),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: TextFormField(
+              initialValue: initialValue != null ? initialValue.toString() : '',
+              decoration: fieldDecoration(
+                context,
+                suffixIcon: suffixIcon,
+                hintText: text,
+              ),
+              obscureText: obscureText,
+              maxLines: !isTextArea ? 1 : 3,
+              keyboardType:
+                  isNumberInput ? TextInputType.number : TextInputType.text,
+              onChanged: (String value) {
+                return onChanged(value);
+              },
+              validator: (value) {
+                return onValidate(value);
+              }),
+        ),
       ),
     );
   }

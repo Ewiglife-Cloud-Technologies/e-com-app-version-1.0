@@ -55,7 +55,7 @@ class _SignupPageState extends State<SignupPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FormHelper.fieldLabel('First Name'),
+              // FormHelper.fieldLabel('First Name'),
               FormHelper.textInput(
                   context,
                   model.firstName,
@@ -67,16 +67,19 @@ class _SignupPageState extends State<SignupPage> {
                 }
                 return null;
               }, text: 'First Name'),
-              FormHelper.fieldLabel('Last Name'),
+              // FormHelper.fieldLabel('Last Name'),
               FormHelper.textInput(
                   context,
                   model.lastName,
                   (value) => {
                         this.model.lastName = value,
                       }, onValidate: (value) {
+                if (value.toString().isEmpty) {
+                  return "Please Enter Last Name";
+                }
                 return null;
               }, text: 'Last Name'),
-              FormHelper.fieldLabel('Email'),
+              // FormHelper.fieldLabel('Email'),
               FormHelper.textInput(
                 context,
                 model.email,
@@ -94,7 +97,7 @@ class _SignupPageState extends State<SignupPage> {
                 },
                 text: 'Email',
               ),
-              FormHelper.fieldLabel('Password'),
+              // FormHelper.fieldLabel('Password'),
               FormHelper.textInput(
                 context,
                 model.password,
@@ -120,7 +123,7 @@ class _SignupPageState extends State<SignupPage> {
                       });
                     }),
               ),
-              FormHelper.fieldLabel('Confirm Password'),
+              // FormHelper.fieldLabel('Confirm Password'),
               FormHelper.textInput(
                 context,
                 model.passwordConfirmation,
@@ -128,8 +131,9 @@ class _SignupPageState extends State<SignupPage> {
                   this.model.passwordConfirmation = value,
                 },
                 onValidate: (value) {
-                  if (value.toString().isEmpty) {
-                    return 'Please Enter Password.';
+                  if (value.toString().isEmpty &&
+                      this.model.password != this.model.passwordConfirmation) {
+                    return 'Password Does Not Match';
                   }
                   return null;
                 },
