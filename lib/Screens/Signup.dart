@@ -29,15 +29,21 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.redAccent,
-        automaticallyImplyLeading: true,
-        title: Text('Sign Up'),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.redAccent,
+      //   automaticallyImplyLeading: true,
+      //   title: Text('Sign Up'),
+      // ),
       body: ProgressHUD(
-        child: Form(
-          key: globalKey,
-          child: _formUI(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Sign Up'),
+            Form(
+              key: globalKey,
+              child: _formUI(),
+            ),
+          ],
         ),
         inAsyncCall: isApiCallProcess,
         opacity: 0.3,
