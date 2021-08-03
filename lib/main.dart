@@ -1,6 +1,5 @@
-import 'package:e_com_app_v_1_0/Screens/LoginPage.dart';
+import 'package:e_com_app_v_1_0/Screens/LoginScreen.dart';
 import 'package:flutter/material.dart';
-import 'Screens/Signup.dart';
 
 void main() {
   runApp(MyApp());
