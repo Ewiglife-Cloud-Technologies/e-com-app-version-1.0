@@ -13,7 +13,7 @@ import 'package:e_com_app_v_1_0/Models/loginmodelpahe.dart';
 class ApiService {
   Future<bool> createUser(UserModel model) async {
     var uri =
-        'https://4ebf96eaaf71f909a5d6996023b84a18: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@ewiglifeapptest.myshopify.com/admin/api/2021-07/customers.json';
+        'https://442090eee80a80013ad14d247d7ffc3e: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@humera-stagging.myshopify.com/admin/api/2021-07/customers.json';
     bool ret = false;
 
     try {
