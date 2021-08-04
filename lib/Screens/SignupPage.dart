@@ -15,6 +15,8 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController emailController = TextEditingController();
 
   ShopifyAuth auth;
+  ShopifyUser user;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +35,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   auth.createUserWithEmailAndPassword(
                       email: emailController.text,
                       password: passwrodController.text);
+                  print(user.id);
+                  print(emailController.text + passwrodController.text);
                 },
                 child: Text('Sign up'))
           ],
