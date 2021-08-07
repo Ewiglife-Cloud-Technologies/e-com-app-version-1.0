@@ -1,0 +1,4 @@
+#Wed Aug 04 06:22:06 PKT 2021
+base.0=/Volumes/doc/projectspeedy/e_com_app_v_1_0/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_simple_shopify: ^0.0.25-alpha
+  flutter_simple_shopify:
 
 
   # The following adds the Cupertino Icons font to your application.

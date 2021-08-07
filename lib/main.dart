@@ -5,7 +5,7 @@ import 'package:flutter_simple_shopify/flutter_simple_shopify.dart';
 
 void main() {
   ShopifyConfig.setConfig("2d87beb704d0a57383d77427cc9017ed",
-      "humera-stagging.myshopify.com", "2021-07");
+      "humera-stagging.myshopify.com", "2020-04");
   runApp(MyApp());
 }
 

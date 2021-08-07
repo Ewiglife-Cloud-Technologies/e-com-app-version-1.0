@@ -14,7 +14,7 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController passwrodController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
 
-  ShopifyAuth auth;
+  ShopifyAuth auth = ShopifyAuth.instance;
   ShopifyUser user;
 
   @override
@@ -31,11 +31,10 @@ class _SignUpPageState extends State<SignUpPage> {
               controller: passwrodController,
             ),
             ElevatedButton(
-                onPressed: () {
-                  auth.createUserWithEmailAndPassword(
+                onPressed: () async {
+                  await auth.createUserWithEmailAndPassword(
                       email: emailController.text,
                       password: passwrodController.text);
-                  print(user.id);
                   print(emailController.text + passwrodController.text);
                 },
                 child: Text('Sign up'))
